@@ -1384,12 +1384,6 @@ contract KIP17Kbirdz is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
     }
 
     function withdraw() external onlyMinter{
-      // This code transfers 5% of the withdraw to JoCoding as a donation.
-      // =============================================================================
-      0x3e944Ca8B08a0a0D3245B05ABF01586B9142f52C.transfer(address(this).balance * 5 / 100);
-      // =============================================================================
-      // This will transfer the remaining contract balance to the owner.
-      // Do not remove this otherwise you will not be able to withdraw the funds.
       // =============================================================================
       msg.sender.transfer(address(this).balance);
       // =============================================================================
