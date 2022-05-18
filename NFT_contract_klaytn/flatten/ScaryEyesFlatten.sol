@@ -1310,10 +1310,10 @@ library MerkleProof {
     }
 }
 
-// File: contracts\KIP17Kbirdz.sol
+// File: contracts\ScaryEyes.sol
 
 pragma solidity ^0.5.0;
-contract KIP17Kbirdz is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
+contract ScaryEyes is KIP17, KIP17Enumerable, KIP17Metadata, MinterRole {
 
     // To prevent bot attack, we record the last contract call block number.
     mapping (address => uint256) private _lastCallBlockNumber;
@@ -1493,7 +1493,7 @@ pragma solidity ^0.5.0;
  * Moreover, it includes approve all functionality using operator terminology
  * @dev see http://kips.klaytn.com/KIPs/kip-17-non_fungible_token
  */
-contract KIP17Full is KIP17, KIP17Enumerable, KIP17Metadata, Ownable, KIP17Kbirdz {
+contract KIP17Full is KIP17, KIP17Enumerable, KIP17Metadata, Ownable, ScaryEyes {
     constructor (string memory name, string memory symbol) public KIP17Metadata(name, symbol) {
         // solhint-disable-previous-line no-empty-blocks
     }
@@ -1781,7 +1781,7 @@ contract KIP17Pausable is KIP13, KIP17, Pausable {
     }
 }
 
-// File: contracts\KIP17KbirdzToken.sol
+// File: contracts\ScaryEyesToken.sol
 
 pragma solidity ^0.5.0;
 
@@ -1789,7 +1789,7 @@ pragma solidity ^0.5.0;
 
 
 
-contract KIP17KbirdzToken is KIP17Full, KIP17Mintable, KIP17MetadataMintable, KIP17Burnable, KIP17Pausable {
+contract ScaryEyesToken is KIP17Full, KIP17Mintable, KIP17MetadataMintable, KIP17Burnable, KIP17Pausable {
     constructor (string memory name, string memory symbol) public KIP17Full(name, symbol) {
     }
 }
